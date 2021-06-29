@@ -1,0 +1,16 @@
+body{
+    background-color: #d4e7c1;
+}
+
+#snake{
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    border-radius: 5px;
+    border:1px solid #4B8854 ;
+}
+/* 
+.card-body{
+    background-color: lightgreen;
+} */

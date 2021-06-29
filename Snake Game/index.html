@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍Snake Game</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+    <link rel="shortcut icon" href="./assets/img/logo-snake.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <style>
+        .controllers{
+            display: none;
+        }
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+          
+        }
+        @media (max-width: 400px) {
+          
+          .controllers{
+                display: block;
+            }
+        }
+
+        
+    </style>
+    <link rel="stylesheet" href="./assets/css/sticky-footer-navbar.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img height="40" src="./assets/img/logo-snake.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" onclick="newGame()" href="#">New Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">About</a>
+                        </li>
+                        
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <div class="container">
+                <h4 class="mt-5 text-center"><span class="text-warning" id="points">0</span> <span class="text-success">Score</span></h4>
+                <div class="row justify-content-center">
+                    
+                    <canvas id="snake" height="512" width="512" class="col-7 border-success"></canvas>
+                
+                </div>
+            </div>   
+         
+            
+            <div class="container controllers">  
+            <div id="" class="row justify-content-center">
+                <div class="btn-group-vertical col-8" role="group" aria-label="Basic outlined example">
+                    <button type="button" onclick="changeDirect()" id="up" class="btn btn-outline-success">
+                        <i class="fas fa-arrow-up text-success"> <img class="text-success" width="10" height="10" src="./assets/img/arrow-up-solid.svg" alt=""> </i>
+                    
+                    </button>
+                    
+                </div>
+                <div class="btn-group  col-8" role="group" aria-label="Basic outlined example">
+                    <button type="button" onclick="changeDirect()" id="left" class="btn btn-outline-success">
+                        <i class="fas fa-arrow-up text-success"> <img class="text-success" width="10" height="10" src="./assets/img/arrow-left-solid.svg" alt=""> </i>
+                    
+                    </button>
+                    <button type="button" onclick="changeDirect()" id="right" class="btn btn-outline-success">
+                        <i class="fas fa-arrow-up text-success"> <img class="text-success" width="10" height="10" src="./assets/img/arrow-right-solid.svg" alt=""> </i>
+                    </button>
+                </div>
+                
+                
+    
+                <div class="btn-group-vertical  col-8" role="group" aria-label="Basic outlined example">
+                   
+                    <button type="button" onclick="changeDirect()" id="down" class="btn btn-outline-success"> 
+                        <i class="fas fa-arrow-up text-success"> <img class="text-success" width="10" height="10" src="./assets/img/arrow-down-solid.svg" alt=""> </i>
+                    
+                    </button>
+                </div>
+                
+            </div>
+        </div> 
+        </div>
+   
+    </main>
+
+    <!-- Modal - Sobre -->
+    <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+          <div class="modal-content border-success text-success">
+            <div class="modal-header border-success">
+              <h5 class="modal-title" id="staticBackdropLabel">The 🐍 Game</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                The snake grows larger as you feed it, becareful not to come accross your own body and die.
+
+            </div>
+            <div class="modal-footer border-success">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Got it!</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer class="footer mt-auto fixed-bottom py-3 bg-light">
+        <div class="container text-muted text-center">
+            <span class="text-muted ">Developer: Jaques M Pires</span>
+        </div>
+    </footer>
+
+    <script defer src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./assets/js/script.js"></script>
+</body>
+
+</html>
